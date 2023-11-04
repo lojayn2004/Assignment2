@@ -568,6 +568,7 @@ int BigReal::getSign() {
 
 int BigReal::size(){
     return wholePart.size() + floatPart.size();
+    //return  summation of size of float and int part
 }
 
 
