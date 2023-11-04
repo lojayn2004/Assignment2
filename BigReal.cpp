@@ -198,7 +198,7 @@ BigReal BigReal::operator-(BigReal& otherNum) {
     }
 }
 
-
+// operator overloading to determine i make addition or subtraction according to numbers' sign
 BigReal BigReal::operator+(BigReal& otherNumber) {
     BigReal result;  // Create a new BigReal object to store the result of the addition.
 
@@ -236,7 +236,7 @@ BigReal BigReal::operator+(BigReal& otherNumber) {
     return result;  // Return the result of the addition
 }
 
-
+// function check negtive sign exist or not
 bool BigReal::isNegative() {
     // Check if the sign of the BigReal is negative.
     if (sign == '-')
@@ -438,7 +438,7 @@ void BigReal::adjust_correct_format(BigReal& otherNum) {
 
 
 
-
+//function make numbers at same length by adding zeros 
 void BigReal::PadZeros(string& str, int length, bool leftPad) {
     int currentLength = str.length();
 
@@ -519,7 +519,7 @@ BigReal BigReal::subtract(BigReal& otherReal) {
 }
 
 
-// Checks that the given number is in he correct format
+// Checks that the given number is in his correct format
 bool BigReal::is_valid_real(string realNumber) {
     int floatingPoint = count(realNumber.begin(), realNumber.end(), '.');
     // Real number cannot have more than floating point
