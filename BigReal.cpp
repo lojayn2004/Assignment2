@@ -384,10 +384,13 @@ bool BigReal::operator== (BigReal& otherReal) {
     adjust_correct_format(otherReal);
     for (int i = 0; i < wholePart.size(); ++i) {
         if (wholePart[i] != otherReal.wholePart[i]) {
+            //checks if whole part not equal to the other part
+            //break
             return false;
         }
 
     }
+    //if first loop return true , it will enter second loop of float part
     for (int i = 0; i < floatPart.size(); ++i) {
         if (floatPart[i] != otherReal.floatPart[i]) {
             return false;
@@ -408,8 +411,9 @@ ostream& operator<<(ostream& cout, const BigReal& number) {
     y.correct_number(y);
 
     if (number.sign == '-') {
-        cout << '-';
+        cout << '-';//if number less than zero
     }
+    //print int part then decimal point then float part
     cout << y.wholePart << '.' << y.floatPart << endl;
     return cout;
 }
